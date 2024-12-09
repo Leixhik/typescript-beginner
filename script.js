@@ -1,15 +1,18 @@
 "use strict";
-class Pelicula {
-    proyectarEnCine() {
-        console.log(`La película ${this.nombre} está siendo proyectada`);
+class Sorteo {
+    constructor(nombre) {
+        this.nombre = nombre;
     }
-    constructor(nombre, protagonistas, actores) {
-        this.nombre = nombre,
-            this.protagonistas = protagonistas,
-            this.actores = actores;
+    setTicket(ticket) {
+        this.ticket = ticket;
+    }
+    getTicket() {
+        return this.ticket;
+    }
+    sortear() {
+        return `Para ${this.nombre} el ticket es ${this.ticket}`;
     }
 }
-const pelicula = new Pelicula('Barbie', ['Barbie', 'Ken'], ['Act 1', 'Act 2']);
-const pelicula2 = new Pelicula('Oppenheimer', ['Si'], ['No']);
-console.log(pelicula);
-console.log(pelicula2);
+let sorteo = new Sorteo('Abstractz Code');
+sorteo.setTicket('S7');
+console.log(sorteo.sortear());
